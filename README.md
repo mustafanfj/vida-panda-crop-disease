@@ -1,7 +1,8 @@
 # VIDA + PANDA — Multi-Agent VLM Crop Disease Diagnosis
 
 > **Paper:** *A Multi-Agent Vision-Language Debate Framework for Zero-Shot Crop Disease Diagnosis*  
-> **Authors:** Mustafa Al Juboori, Zeeshan Abbas, Zayed Al Aghbari, Farman Ullah, Mobeen Ur Rehman  
+> > **Authors:** Mustafa Al Juboori†, Zeeshan Abbas†, Zayed Al Aghbari, Farman Ullah, Mobeen Ur Rehman  
+> †These authors contributed equally to this work.
 > **Institution:** United Arab Emirates University (UAEU)
 
 ---
@@ -123,6 +124,10 @@ vida_panda_results/
              Al Aghbari, Zayed and Ullah, Farman and 
              Rehman, Mobeen Ur},
   journal = {Frontiers in Plant Science},
-  year    = {2025}
+  year    = {2025},
+  note    = {Co-first authors: Mustafa Al Juboori and Zeeshan Abbas}
 }
 ```
+
+## Contact
+Corresponding author: Mobeen Ur Rehman — mobeen.rehman@uaeu.ac.ae
