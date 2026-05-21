@@ -3,6 +3,7 @@
 > **Paper:** *A Multi-Agent Vision-Language Debate Framework for Zero-Shot Crop Disease Diagnosis*  
 > > **Authors:** Mustafa Al Juboori†, Zeeshan Abbas†, Zayed Al Aghbari, Farman Ullah, Mobeen Ur Rehman  
 > †These authors contributed equally to this work.
+> > 
 > **Institution:** United Arab Emirates University (UAEU)
 
 ---
