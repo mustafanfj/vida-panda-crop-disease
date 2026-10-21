@@ -10,6 +10,8 @@
 <a href="https://mustafanfj.github.io"><img src="https://img.shields.io/badge/author-Mustafa%20Al%20Juboori-17202A?style=flat-square" alt="author: Mustafa Al Juboori"></a>
 </p>
 
+![VIDA+PANDA framework: seven agents diagnose independently in VIDA, then a selected panel debates by name in PANDA with anti-sycophancy rules and weighted consensus](figures/vida_panda_framework.png)
+
 Reproducibility code for the paper **[A multi-agent vision-language debate framework for zero-shot crop disease diagnosis](https://doi.org/10.3389/fpls.2026.1890016)**, *Frontiers in Plant Science* 17:1890016, 2026.
 
 **M. Al Juboori**†, Z. Abbas†, Z. Al Aghbari, F. Ullah, M. Ur Rehman. († equal contribution) United Arab Emirates University.
@@ -42,6 +44,10 @@ Zero-shot evaluation on CDDM, N = 1,219 images. *Combined* accuracy means both c
 
 - Debate leaves the panel's consensus unchanged (McNemar *p* = 1.000) but substantially lifts the weaker agent: **Qwen-VL improves from 0.183 to 0.304 Combined (+12.1 points, Wilcoxon *p* < 0.0001)**, correcting 159 disease verdicts against 37 degraded.
 - Strong agents are highly stubborn (GPT-4.1 85.8%, Grok-4.20-Fast 98.7%), and GPT-4.1's reasoning is the most cited cause of peer revisions.
+
+![PANDA debate analysis: per-agent accuracy before and after debate, peer influence matrix, stubbornness and the impact of verdict changes](figures/panda_debate_analysis.png)
+
+<sub>Figures reproduced from the paper (Frontiers in Plant Science, open access).</sub>
 
 ## Repository structure
 
