@@ -1,0 +1,10 @@
+openai
+anthropic
+together
+pillow
+pandas
+numpy
+matplotlib
+seaborn
+tqdm
+scikit-learn

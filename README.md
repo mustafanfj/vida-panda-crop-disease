@@ -1,6 +1,6 @@
 # VIDA + PANDA — Multi-Agent VLM Crop Disease Diagnosis
 
-> **Paper:** *A Multi-Agent Vision-Language Debate Framework for Zero-Shot Crop Disease Diagnosis*, **Frontiers in Plant Science**, 2026.
+> **Paper:** [*A multi-agent vision-language debate framework for zero-shot crop disease diagnosis*](https://doi.org/10.3389/fpls.2026.1890016), **Frontiers in Plant Science** 17:1890016, 2026. DOI: [10.3389/fpls.2026.1890016](https://doi.org/10.3389/fpls.2026.1890016)
 >
 > **Authors:** Mustafa Al Juboori†, Zeeshan Abbas†, Zayed Al Aghbari, Farman Ullah, Mobeen Ur Rehman
 > († equal contribution)
@@ -116,20 +116,55 @@ vida_panda_results/
 └── panda_debate_analysis.png # 6-panel PANDA visualization
 ```
 
+## Results (from the paper)
+
+Zero-shot evaluation on CDDM, N = 1,219 images. *Combined* accuracy means both crop and disease are correct.
+
+**Round 1 (VIDA, independent agents)**
+
+| Agent | Combined accuracy |
+|---|---|
+| GPT-4.1 | 0.366 |
+| Grok-4.20-Fast | 0.326 |
+| GPT-4.1-mini | 0.303 |
+| Claude Sonnet | 0.186 |
+| Qwen-VL | 0.184 |
+| Claude Haiku | 0.121 |
+| Gemma-3n-E4B | 0.098 |
+
+**Debate (PANDA, panel: GPT-4.1, Qwen-VL, Grok-4.20-Fast)**
+
+| | Combined | Crop | Disease |
+|---|---|---|---|
+| Pre-debate weighted vote (Round 1) | 0.359 | 0.835 | 0.436 |
+| Post-debate consensus (Round 3) | 0.360 | 0.829 | 0.436 |
+
+- Debate leaves the panel's consensus unchanged (McNemar *p* = 1.000), but it substantially lifts the weaker agent: **Qwen-VL improves from 0.183 to 0.304 Combined (+0.121, Wilcoxon *p* < 0.0001)**, correcting 159 disease verdicts against 37 degraded.
+- Strong agents are highly stubborn (GPT-4.1 85.8%, Grok-4.20-Fast 98.7%), and GPT-4.1's reasoning is the most cited cause of peer revisions.
+
+See the paper for per-class results, the influence analysis and the 490-image ablation.
+
 ## Citation
 
 ```bibtex
 @article{aljuboori2026vidapanda,
-  title   = {A Multi-Agent Vision-Language Debate Framework for 
-             Zero-Shot Crop Disease Diagnosis},
-  author  = {Al Juboori, Mustafa and Abbas, Zeeshan and 
-             Al Aghbari, Zayed and Ullah, Farman and 
+  title   = {A multi-agent vision-language debate framework for
+             zero-shot crop disease diagnosis},
+  author  = {Al Juboori, Mustafa and Abbas, Zeeshan and
+             Al Aghbari, Zayed and Ullah, Farman and
              Rehman, Mobeen Ur},
   journal = {Frontiers in Plant Science},
+  volume  = {17},
+  pages   = {1890016},
   year    = {2026},
+  doi     = {10.3389/fpls.2026.1890016},
   note    = {Co-first authors: Mustafa Al Juboori and Zeeshan Abbas}
 }
 ```
 
 ## Contact
 Corresponding author: Mobeen Ur Rehman — mobeen.rehman@uaeu.ac.ae
+
+## License
+
+Code released under the [MIT License](LICENSE).
