@@ -20,12 +20,12 @@ CDDM Images
 ┌─────────────────────────────────────────────┐
 │  VIDA — Varied Independent Diagnostic       │
 │  Assessment                                 │
-│  6 agents × Round 1 (independent)          │
-│  → GPT-4.1 judge scores RQ + Plausibility  │
+│  7 agents × Round 1 (independent)          │
+│  → GPT-5 judge scores RQ + Plausibility    │
 │  → Softmax weights computed (T=2.0)        │
 │  → Pre-debate baseline vote                 │
 └──────────────────────┬──────────────────────┘
-                       │ Top-3 selected
+                       │ Top agent per model family → panel
                        ▼
 ┌─────────────────────────────────────────────┐
 │  PANDA — Peer-Anchored Named Deliberation   │
@@ -41,31 +41,37 @@ CDDM Images
 
 ## Agents
 
-| Agent | Provider | Model String | Role |
-|---|---|---|---|
-| GPT-4.1 | OpenAI | `gpt-4.1` | Anchor (highest accuracy) |
-| Grok-4.20-Fast | xAI | `grok-4.20-non-reasoning` | High accuracy, very stubborn |
-| GPT-4.1-mini | OpenAI | `gpt-4.1-mini` | Mid-tier, most improved by debate |
-| Claude Sonnet 4.5 | Anthropic | `claude-sonnet-4-5` | Most persuadable |
-| Claude Haiku 4.5 | Anthropic | `claude-haiku-4-5` | Lightweight Anthropic |
-| Gemma-3n-E4B | Together.ai | `google/gemma-3n-E4B-it` | Open-weight via Together.ai |
+| Agent | Provider | Model string |
+|---|---|---|
+| GPT-4.1 | OpenAI | `gpt-4.1` |
+| Grok-4.20-Fast | xAI | `grok-4.20-non-reasoning` |
+| GPT-4.1-mini | OpenAI | `gpt-4.1-mini` |
+| Claude Sonnet 4.5 | Anthropic | `claude-sonnet-4-5` |
+| Qwen-VL | Together.ai (open weights) | `Qwen/Qwen3.5-9B` |
+| Claude Haiku 4.5 | Anthropic | `claude-haiku-4-5` |
+| Gemma-3n-E4B | Together.ai (open weights) | `google/gemma-3n-E4B-it` |
+
+The PANDA panel keeps the strongest agent from each model family by Round 1 Combined accuracy. The main study's panel is **GPT-4.1, Qwen-VL and Grok-4.20-Fast**. A non-participant **GPT-5** judge scores each Round 1 response for Reasoning Quality and Plausibility (1–10).
 
 ## Dataset
 
-**CDDM** (Liu et al., 2024) — Crop Disease Diagnosis Multi-Modal benchmark  
-- 54 disease categories × 16 crop species  
-- Evaluation subset: **490 images**, 53 classes, stratified (80% diseased / 20% healthy), seed=42  
-- Dataset path on Kaggle: `/kaggle/input/datasets/maljuboori/cddm-dataset/images`
+**CDDM** (Liu et al., 2024), the Crop Disease Diagnosis Multi-Modal benchmark: 54 disease classes across 16 crop species.
+
+- **Main study:** 1,219 images covering 53 classes (Tomato Yellow Leaf Curl is absent from the accessible partition). Up to 25 images per class, seed 42, adjusted to about 80% diseased and 20% healthy.
+- **Exploratory study:** a 490-image subset, used for the panel-composition ablation and the semantic analysis.
+- The dataset name is withheld from every prompt.
 
 ## Notebook
 
-**`vida_panda_cddm.ipynb`** — Single notebook, 33 cells
+**`vida_panda_cddm.ipynb`**: single notebook, 33 cells.
+
+> **Configuration note:** the notebook as committed is set up for the 490-image exploratory study (six agents, GPT-4.1 judge). The main study in the paper adds Qwen-VL, uses GPT-5 as the judge and runs on 1,219 images.
 
 | Cells | Phase | Description |
 |---|---|---|
 | 1–9 | Setup | Install, API keys, taxonomy, dataset, prompts, parser, agents, voting, judge |
-| 10 | VIDA | Round 1: all 6 agents independent, saves raw bank + checkpoint |
-| 11 | VIDA | GPT-4.1 judge scoring (Reasoning Quality + Plausibility) |
+| 10 | VIDA | Round 1: all agents independent, saves raw bank + checkpoint |
+| 11 | VIDA | Judge scoring (Reasoning Quality + Plausibility) |
 | 12 | VIDA | 9-panel dashboard, metrics table |
 | 13 | Config | Agent selection (auto top-3 or manual) + softmax weight computation |
 | 14 | PANDA | Rounds 2 + 3 named debate, pre/post baseline comparison |
@@ -78,9 +84,9 @@ Add these in **Settings → Secrets** before running:
 
 | Secret | Used for |
 |---|---|
-| `OPENAI_API_KEY` | GPT-4.1, GPT-4.1-mini, GPT-4.1 judge |
+| `OPENAI_API_KEY` | GPT-4.1, GPT-4.1-mini, judge |
 | `ANTHROPIC_API_KEY` | Claude Sonnet 4.5, Claude Haiku 4.5 |
-| `TOGETHER_API_KEY` | Gemma-3n-E4B via Together.ai |
+| `TOGETHER_API_KEY` | Qwen-VL and Gemma-3n-E4B via Together.ai |
 | `XAI_API_KEY` | Grok-4.20-Fast via xAI API |
 
 ## Key Design Decisions
