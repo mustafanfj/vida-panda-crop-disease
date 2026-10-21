@@ -2,6 +2,14 @@
 
 **Multi-agent vision-language debate for zero-shot crop disease diagnosis.**
 
+<p>
+<a href="https://doi.org/10.3389/fpls.2026.1890016"><img src="https://img.shields.io/badge/paper-Frontiers%20in%20Plant%20Science%202026-0B6A66?style=flat-square" alt="paper: Frontiers in Plant Science 2026"></a>
+<a href="https://doi.org/10.3389/fpls.2026.1890016"><img src="https://img.shields.io/badge/DOI-10.3389/fpls.2026.1890016-0B6A66?style=flat-square" alt="DOI: 10.3389/fpls.2026.1890016"></a>
+<img src="https://img.shields.io/badge/dataset-CDDM-0B6A66?style=flat-square" alt="dataset: CDDM">
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0B6A66?style=flat-square" alt="license: MIT"></a>
+<a href="https://mustafanfj.github.io"><img src="https://img.shields.io/badge/author-Mustafa%20Al%20Juboori-17202A?style=flat-square" alt="author: Mustafa Al Juboori"></a>
+</p>
+
 Reproducibility code for the paper **[A multi-agent vision-language debate framework for zero-shot crop disease diagnosis](https://doi.org/10.3389/fpls.2026.1890016)**, *Frontiers in Plant Science* 17:1890016, 2026.
 
 **M. Al Juboori**†, Z. Abbas†, Z. Al Aghbari, F. Ullah, M. Ur Rehman. († equal contribution) United Arab Emirates University.
