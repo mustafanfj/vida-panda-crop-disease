@@ -1,10 +1,14 @@
-openai
-anthropic
-together
-pillow
-pandas
-numpy
-matplotlib
-seaborn
-tqdm
-scikit-learn
+# VIDA + PANDA reproducibility — Python 3.10+
+# Pinned loosely; exact versions used in the study are noted in comments.
+openai>=1.40        # OpenAI SDK (GPT-4.1, GPT-4.1-mini, GPT-5 judge)
+anthropic>=0.40     # Anthropic SDK (Claude Sonnet / Haiku)
+together>=1.3       # Together.ai SDK (Qwen-VL, Gemma-3n) and Grok via OpenAI-compatible endpoint
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+seaborn>=0.13
+pillow>=10.0
+tqdm>=4.66
+requests>=2.31
+# kaggle_secrets is provided by the Kaggle runtime only (not installable via pip).
+# Outside Kaggle, API keys are read from environment variables instead — see .env.example.

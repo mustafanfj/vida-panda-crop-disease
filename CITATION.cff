@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper."
+title: "VIDA + PANDA: A Multi-Agent Vision-Language Debate Framework for Zero-Shot Crop Disease Diagnosis"
+authors:
+  - family-names: "Al Juboori"
+    given-names: "Mustafa"
+  - family-names: "Abbas"
+    given-names: "Zeeshan"
+  - family-names: "Al Aghbari"
+    given-names: "Zayed"
+  - family-names: "Ullah"
+    given-names: "Farman"
+  - family-names: "Ur Rehman"
+    given-names: "Mobeen"
+repository-code: "https://github.com/mustafanfj/vida-panda-crop-disease"
+license: MIT
+year: 2026
+preferred-citation:
+  type: article
+  title: "A multi-agent vision-language debate framework for zero-shot crop disease diagnosis"
+  authors:
+    - family-names: "Al Juboori"
+      given-names: "Mustafa"
+    - family-names: "Abbas"
+      given-names: "Zeeshan"
+    - family-names: "Al Aghbari"
+      given-names: "Zayed"
+    - family-names: "Ullah"
+      given-names: "Farman"
+    - family-names: "Ur Rehman"
+      given-names: "Mobeen"
+  journal: "Frontiers in Plant Science"
+  volume: 17
+  start: 1890016
+  year: 2026
+  doi: "10.3389/fpls.2026.1890016"
